@@ -12,6 +12,7 @@ public class airbnbDefinitions {
 
     @Given("^se debe realizar una busqueda de departamento$")
     public void se_debe_realizar_una_busqueda_de_departamento() throws Throwable {
+        airbnbSteps.entrar();
     }
 
     @When("^escojo las condiciones de departamento$")
