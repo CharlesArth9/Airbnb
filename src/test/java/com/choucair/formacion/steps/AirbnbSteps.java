@@ -10,7 +10,8 @@ public class AirbnbSteps {
     public void entrar(){
         airbnbPage.open();
         airbnbPage.ubicarMapa();
-        airbnbPage.zoomMapa();
+//        airbnbPage.prueba();
+//        airbnbPage.zoomMapa();
     }
 
 
