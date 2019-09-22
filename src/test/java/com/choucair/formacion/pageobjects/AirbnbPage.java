@@ -35,7 +35,7 @@ public class AirbnbPage extends PageObject {
         WebElement munequito = $("//div[@class='gm-svpc']");
         super.clickOn(munequito);
         waitFor(5).second();
-
+//        estoy probando nuevo alias para el push en este commit
 //        Point coor = getDriver().findElement(By.xpath("//body[@class='with-new-header']/div/div/main[@id='site-content']/div/section/div[@id='room']/div[@class='_mwt4r90']/div/div[@class='_1k6i3d4']/div[@class='_mkyacvg']/div/div[@id='neighborhood']/div[@class='_1gw6tte']/div/div/div/div[@class='_e296pg']/section/div/div/div/div/div/div/div[@class='gm-style']/div/div[3]")).getLocation();
 //        System.out.println(coor);
 //        Actions builder = new Actions(getDriver());
