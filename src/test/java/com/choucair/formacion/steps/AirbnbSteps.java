@@ -3,13 +3,12 @@ package com.choucair.formacion.steps;
 import com.choucair.formacion.pageobjects.AirbnbPage;
 import net.thucydides.core.annotations.Step;
 
-import java.awt.*;
 
 public class AirbnbSteps {
     AirbnbPage airbnbPage;
 
     @Step
-    public void entrar() throws AWTException {
+    public void entrar()  {
         airbnbPage.open();
         airbnbPage.ubicarMapa();
         airbnbPage.moverMunequito();

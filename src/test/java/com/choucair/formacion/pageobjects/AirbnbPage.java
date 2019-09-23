@@ -31,7 +31,7 @@ public class AirbnbPage extends PageObject {
 //        waitFor(5).second();
     }
 
-    public void moverMunequito() throws AWTException {
+    public void moverMunequito()  {
         WebElement munequito = $("//div[@class='gm-svpc']");
         new Actions(getDriver()).clickAndHold(munequito).moveByOffset(492,4659).release().perform();
 
