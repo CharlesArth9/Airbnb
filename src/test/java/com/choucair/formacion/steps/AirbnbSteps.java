@@ -10,6 +10,7 @@ import java.io.IOException;
 
 public class AirbnbSteps {
     AirbnbPage airbnbPage;
+
     @Step
 
     public void reservas(int id) throws IOException {
@@ -22,11 +23,15 @@ public class AirbnbSteps {
         String[] cell = reader.readNext();
         while ((cell = reader.readNext()) != null) {
             if (id == Integer.parseInt(cell[0])) {
-                airbnbPage.donde(cell[1]);
-                airbnbPage.llegada(cell[2],cell[3]);
-               // airbnbPage.huespedes(cell[4],cell[5],cell[6]);
+                //airbnbPage.donde(cell[1]);
+                //airbnbPage.fechas(cell[2], cell[3]);
+                //airbnbPage.huespedes(cell[4], cell[5], cell[6]);
             }
-        }
-        reader.close();
+        }reader.close();
+    }
+
+    public void escojer() {
+        int valormaximo = 100000;
+        airbnbPage.departamento(valormaximo);
     }
 }

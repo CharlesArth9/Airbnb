@@ -18,7 +18,7 @@ public class airbnbDefinitions {
 
     @When("^escojo las condiciones de departamento$")
     public void escojo_las_condiciones_de_departamento() {
-
+        airbnbSteps.escojer();
     }
 
     @Then("^busco en el mapa y hago el reporte$")
