@@ -19,6 +19,7 @@ public class AirbnbPage extends PageObject {
         /*JavascriptExecutor jse = (JavascriptExecutor) getDriver();
         jse.executeScript("window.scrollBy(0, 463)");
         $("//button[contains(text(),'Ubicación')]").click();*/
+
         $("//a[@href='#neighborhood']").click();
 //        getDriver().get("https://www.google.com/maps/@42.6613213,21.1656307,16z?hl=es");
     }
