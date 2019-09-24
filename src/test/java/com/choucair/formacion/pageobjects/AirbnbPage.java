@@ -1,6 +1,5 @@
 package com.choucair.formacion.pageobjects;
 
-import com.google.maps.model.LatLng;
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
@@ -17,26 +16,27 @@ public class AirbnbPage extends PageObject {
 
     public void ubicarMapa() {
         $("//button[@class='optanon-allow-all accept-cookies-button']").click();
-        JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+        /*JavascriptExecutor jse = (JavascriptExecutor) getDriver();
         jse.executeScript("window.scrollBy(0, 463)");
-        $("//button[contains(text(),'Ubicación')]").click();
-
-//        $("//a[@class]//div[@class='_czm8crp'][contains(text(),'Pris')]").click();
-//        waitFor(5).second();
+        $("//button[contains(text(),'Ubicación')]").click();*/
+        $("//a[@href='#neighborhood']").click();
 //        getDriver().get("https://www.google.com/maps/@42.6613213,21.1656307,16z?hl=es");
-//        waitFor(5).second();
     }
 
     public void moverMunequito()  {
+        $("//div[@class='_nh2jk8']//button[1]").click();
         WebElement munequito = $("//div[@class='gm-svpc']");
-        Actions act=new Actions(getDriver());
-        act.dragAndDropBy(munequito,492, 4659).build().perform();
-//        new Actions(getDriver()).clickAndHold(munequito).moveByOffset(492,4659).release().perform();
-
 //        super.clickOn(munequito);
-        waitFor(5).second();
+
+
+//        new Actions(getDriver()).dragAndDropBy(munequito,395,400).build().perform();
+        new Actions(getDriver()).clickAndHold(munequito).moveByOffset(495,4786).build().perform();
+        waitFor(3).second();
+        new Actions(getDriver()).contextClick(munequito).release().perform();
+//        new Actions(getDriver()).clickAndHold(munequito).moveToElement(munequito,395,400).build().perform();
 //        Point coor = getDriver().findElement(By.xpath("//body[@class='with-new-header']/div/div/main[@id='site-content']/div/section/div[@id='room']/div[@class='_mwt4r90']/div/div[@class='_1k6i3d4']/div[@class='_mkyacvg']/div/div[@id='neighborhood']/div[@class='_1gw6tte']/div/div/div/div[@class='_e296pg']/section/div/div/div/div/div/div/div[@class='gm-style']/div/div[3]")).getLocation();
 //        System.out.println(coor);
     }
+
 
 }
