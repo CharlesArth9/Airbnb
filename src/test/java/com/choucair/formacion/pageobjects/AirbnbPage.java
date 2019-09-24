@@ -48,14 +48,27 @@ public class AirbnbPage extends PageObject {
         find(By.xpath("//button[@type='submit']")).click();
     }
 
-    public void departamento(int valormaximo) {
+    public void departamento(String valormaximo) {
+        //String xpath7 = $("//div[@class='_8ssblpx']//meta[@content=" + i + "]");
+        ////span[@class='_krjbj']//ancestor::span[4][contains(text(),'noche')]
+        String xpath = "//button[@class='optanon-allow-all accept-cookies-button']";
+        waitFor((WebElementFacade) $(xpath)).waitUntilVisible().click();
+        String xpath0 ="//*[text()='Precio']";
+        waitFor((WebElementFacade) $(xpath0)).waitUntilVisible().click();
+        find(By.xpath("//input[@id='price_filter_max']")).type(valormaximo);
+        find(By.xpath("//button[@class='_b0ybw8s']")).click();
         List<WebElement> divs = getDriver().findElements(By.xpath("//div[@class='_8ssblpx']"));
         int count = divs.size();
-        for (int i = 1; i < count+1; i++) {
-            //String xpath7 = $("//div[@class='_8ssblpx']//meta[@content=" + i + "]");
-            String xpath8 = $("//span[@class='_krjbj']//ancestor::span[4][contains(text(),'noche')]").getText();
-            System.out.println(xpath8);
-        }
+        //for (int i=1; i<count; i++){
+            String apartamentos = $("/html[1]/body[1]/div[3]/div[1]/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]//*[text()=' en total']");
+            waitFor((WebElementFacade)$(apartamentos)).waitUntilVisible().getText();
+            System.out.println(apartamentos);
+          //  }
+
+
+
+
+
     }
 }
 

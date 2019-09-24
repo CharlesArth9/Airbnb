@@ -1,19 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Airbnb" skipped="0" tests="1" time="21.29" timestamp="2019-09-23T17:01:57.977-05:00[America/Bogota]"><testcase name="busqueda de apartamento en prishtina kosovo polje con precio menor de un millon"><error message="The following error occurred: Expected condition failed: waiting for By.xpath: //div[@class='_8ssblpx']//meta[@content=1] to be displayed (tried for 5 second(s) with 100 MILLISECONDS interval)&#10;Build info: version: '3.5.2', revision: '10229a9', time: '2017-08-21T17:29:55.15Z'&#10;System info: host: 'CHMEPPF0T3KVV', ip: '172.17.27.80', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'&#10;Driver info: driver.version: unknown&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.5.2', revision: '10229a9', time: '2017-08-21T17:29:55.15Z'&#10;System info: host: 'CHMEPPF0T3KVV', ip: '172.17.27.80', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException">The following error occurred: Expected condition failed: waiting for By.xpath: //div[@class='_8ssblpx']//meta[@content=1] to be displayed (tried for 5 second(s) with 100 MILLISECONDS interval)
-Build info: version: '3.5.2', revision: '10229a9', time: '2017-08-21T17:29:55.15Z'
-System info: host: 'CHMEPPF0T3KVV', ip: '172.17.27.80', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
-Driver info: driver.version: unknown
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.2', revision: '10229a9', time: '2017-08-21T17:29:55.15Z'
-System info: host: 'CHMEPPF0T3KVV', ip: '172.17.27.80', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
-Driver info: driver.version: unknown</error><system-err>The following error occurred: Expected condition failed: waiting for By.xpath: //div[@class='_8ssblpx']//meta[@content=1] to be displayed (tried for 5 second(s) with 100 MILLISECONDS interval)
-Build info: version: '3.5.2', revision: '10229a9', time: '2017-08-21T17:29:55.15Z'
-System info: host: 'CHMEPPF0T3KVV', ip: '172.17.27.80', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
-Driver info: driver.version: unknown
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.2', revision: '10229a9', time: '2017-08-21T17:29:55.15Z'
-System info: host: 'CHMEPPF0T3KVV', ip: '172.17.27.80', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
-Driver info: driver.version: unknown&#13;
-com.choucair.formacion.pageobjects.AirbnbPage.departamento(AirbnbPage.java:55)&#13;
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Airbnb" skipped="0" tests="1" time="16.69" timestamp="2019-09-24T09:58:46.295-05:00[America/Bogota]"><testcase name="busqueda de apartamento en prishtina kosovo polje con precio menor de un millon"><error message="net.serenitybdd.core.pages.WebElementFacadeImpl cannot be cast to java.lang.String" type="java.lang.ClassCastException">net.serenitybdd.core.pages.WebElementFacadeImpl cannot be cast to java.lang.String</error><system-err>net.serenitybdd.core.pages.WebElementFacadeImpl cannot be cast to java.lang.String&#13;
+com.choucair.formacion.pageobjects.AirbnbPage.departamento(AirbnbPage.java:63)&#13;
 com.choucair.formacion.steps.AirbnbSteps.escojer(AirbnbSteps.java:35)&#13;
 com.choucair.formacion.definition.airbnbDefinitions.escojo_las_condiciones_de_departamento(airbnbDefinitions.java:21)&#13;
+✽.When escojo las condiciones de departamento(src/test/resources/features/airbnb.feature:4)&#13;
 </system-err></testcase></testsuite>

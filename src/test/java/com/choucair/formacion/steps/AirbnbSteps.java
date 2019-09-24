@@ -31,7 +31,7 @@ public class AirbnbSteps {
     }
 
     public void escojer() {
-        int valormaximo = 100000;
+        String valormaximo = "100000";
         airbnbPage.departamento(valormaximo);
     }
 }
