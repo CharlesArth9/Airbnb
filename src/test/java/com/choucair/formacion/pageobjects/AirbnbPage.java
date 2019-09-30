@@ -3,16 +3,24 @@ package com.choucair.formacion.pageobjects;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.regex.Pattern;
 
-
-//@DefaultUrl("https://www.airbnb.com.co/")
-@DefaultUrl("https://www.airbnb.com.co/s/Kosovo-Polje/homes?query=Kosovo%20Polje&checkin=2019-10-31&checkout=2019-11-06&adults=1&children=0&infants=3&guests=1&toddlers=0&place_id=&refinement_paths%5B%5D=%2Ffor_you&source=mc_search_bar&search_type=unknown")
+@DefaultUrl("https://www.airbnb.com.co/")
+//@DefaultUrl("https://www.airbnb.com.co/s/Kosovo-Polje/homes?query=Kosovo%20Polje&checkin=2019-10-31&checkout=2019-11-06&adults=1&children=0&infants=3&guests=1&toddlers=0&place_id=&refinement_paths%5B%5D=%2Ffor_you&source=mc_search_bar&search_type=unknown")
 public class AirbnbPage extends PageObject {
+
+    @FindBy(xpath = "//div[@itemprop='itemListElement']//*[contains(text(),'huéspedes')]")
+    List<WebElementFacade> listDepartamentos;
+
     public void donde(String destino) {
         String xpath0 = "//button[@class='optanon-allow-all accept-cookies-button']";
         waitFor((WebElementFacade) $(xpath0)).waitUntilVisible().click();
@@ -49,27 +57,20 @@ public class AirbnbPage extends PageObject {
     }
 
     public void departamento(String valormaximo) {
-        //String xpath7 = $("//div[@class='_8ssblpx']//meta[@content=" + i + "]");
-        ////span[@class='_krjbj']//ancestor::span[4][contains(text(),'noche')]
-        String xpath = "//button[@class='optanon-allow-all accept-cookies-button']";
-        waitFor((WebElementFacade) $(xpath)).waitUntilVisible().click();
         String xpath0 ="//*[text()='Precio']";
         waitFor((WebElementFacade) $(xpath0)).waitUntilVisible().click();
         find(By.xpath("//input[@id='price_filter_max']")).type(valormaximo);
         find(By.xpath("//button[@class='_b0ybw8s']")).click();
         List<WebElement> divs = getDriver().findElements(By.xpath("//div[@class='_8ssblpx']"));
         int count = divs.size();
-        //for (int i=1; i<count; i++){
-            String apartamentos = $("/html[1]/body[1]/div[3]/div[1]/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]//*[text()=' en total']");
-            waitFor((WebElementFacade)$(apartamentos)).waitUntilVisible().getText();
-            System.out.println(apartamentos);
-          //  }
-
-
-
-
-
+        int randomNum = ThreadLocalRandom.current().nextInt(1, count + 1);
+        System.out.println(randomNum);
+        listDepartamentos.get(randomNum).click();
+        waitFor(5).seconds();
+        }
     }
-}
+
+
+
 
 

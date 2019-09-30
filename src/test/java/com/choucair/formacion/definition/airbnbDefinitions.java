@@ -11,14 +11,17 @@ import java.io.IOException;
 public class airbnbDefinitions {
     @Steps
     AirbnbSteps airbnbSteps;
+    String casoPrueba;
 
     @Given("^se debe realizar una busqueda de departamento (\\d+)$")
-    public void se_debe_realizar_una_busqueda_de_departamento(int id) throws IOException {
+    public void se_debe_realizar_una_busqueda_de_departamento(String id) throws IOException {
+        this.casoPrueba = id;
+        airbnbSteps.lectura("1");
         airbnbSteps.reservas(id);    }
 
-    @When("^escojo las condiciones de departamento$")
-    public void escojo_las_condiciones_de_departamento() {
-        airbnbSteps.escojer();
+    @When("^escojo las condiciones de departamento (\\d+)$")
+    public void escojo_las_condiciones_de_departamento(String id) {
+        airbnbSteps.escojer(id);
     }
 
     @Then("^busco en el mapa y hago el reporte$")

@@ -1,2 +1,2 @@
-id,lugar,llegada,salida,bebes,niños,adultos,
-1,Kosovo Polje,31,6,3,0,1,
+id,lugar,llegada,salida,bebes,niños,adultos,valorMaximo
+1,Kosovo Polje,31,6,3,0,1,1000000
