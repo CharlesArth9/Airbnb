@@ -12,6 +12,7 @@ public class AirbnbPageTest {
     @BeforeMethod
     public void setUp()
     {
+        //hola
         airbnbPageUnderTest.open();
         airbnbPageUnderTest = new AirbnbPage();
     }
