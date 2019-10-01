@@ -55,7 +55,7 @@ public class AirbnbPage extends PageObject {
             String precio_total = totalseparado[2].trim();
             precio_total = precio_total.replaceAll("[[^a-zA-Z0-9\\s+]]", "");
             precio_total = precio_total.substring(0,5);
-            int total = Integer.parseInt(precio_total);
+            int total = Integer.valueOf(precio_total);
             System.out.println(total);
         }
 
