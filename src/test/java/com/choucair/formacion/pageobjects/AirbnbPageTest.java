@@ -10,7 +10,9 @@ public class AirbnbPageTest {
     private AirbnbPage airbnbPageUnderTest;
 
     @BeforeMethod
-    public void setUp() {
+    public void setUp()
+    {
+        airbnbPageUnderTest.open();
         airbnbPageUnderTest = new AirbnbPage();
     }
 
@@ -19,29 +21,22 @@ public class AirbnbPageTest {
         // Setup
 
         // Run the test
-        airbnbPageUnderTest.open();
-//        airbnbPage.excelente();
-
         airbnbPageUnderTest.expresionR();
-
         // Verify the results
     }
 
     @Test
     public void testExcelente() throws Exception {
         // Setup
-
         // Run the test
-        airbnbPageUnderTest.excelente();
-
+        //  airbnbPageUnderTest.excelente();
         // Verify the results
     }
 
     @Test(expectedExceptions = {AWTException.class})
     public void testExcelente_ThrowsAWTException() throws Exception {
         // Setup
-
         // Run the test
-        airbnbPageUnderTest.excelente();
+        //   airbnbPageUnderTest.excelente();
     }
 }
