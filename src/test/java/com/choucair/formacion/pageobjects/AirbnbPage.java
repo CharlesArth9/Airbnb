@@ -1,5 +1,6 @@
 package com.choucair.formacion.pageobjects;
 
+import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.*;
@@ -12,14 +13,15 @@ import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 
-@DefaultUrl("https://www.tripadvisor.co/Restaurant_Review-g681278-d11896708-Reviews-Pollo_Arabe_Quibdo-Quibdo_Choco_Department.html")
+@DefaultUrl("https://cutt.ly/metRPdQ")
 public class AirbnbPage extends PageObject {
 
-   /* public void ubicarMapa() {
-        $("//button[@class='optanon-allow-all accept-cookies-button']").click();
-        *//*JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+    /* public void ubicarMapa() {
+         $("//button[@class='optanon-allow-all accept-cookies-button']").click();
+         *//*JavascriptExecutor jse = (JavascriptExecutor) getDriver();
         jse.executeScript("window.scrollBy(0, 463)");
         $("//button[contains(text(),'Ubicación')]").click();*//*
 
@@ -41,6 +43,23 @@ public class AirbnbPage extends PageObject {
 //        Point coor = getDriver().findElement(By.xpath("//body[@class='with-new-header']/div/div/main[@id='site-content']/div/section/div[@id='room']/div[@class='_mwt4r90']/div/div[@class='_1k6i3d4']/div[@class='_mkyacvg']/div/div[@id='neighborhood']/div[@class='_1gw6tte']/div/div/div/div[@class='_e296pg']/section/div/div/div/div/div/div/div[@class='gm-style']/div/div[3]")).getLocation();
 //        System.out.println(coor);
     }*/
+    public void expresionR(){
+        $("//button[@title='Aceptar']").waitUntilClickable().click();
+        String  totalhabitacion= $("//div[@class=\"_8ssblpx\"]//descendant-or-self::span[starts-with(text(),'Total')]").getText();
+        System.out.println(totalhabitacion);
+        String[] totalseparado = totalhabitacion.split("\n");
+
+
+        if (Pattern.matches("[$][0-9]+[,][0-9]+\\s[A-Z]+", totalseparado[2].trim()))
+        {
+            String precio_total = totalseparado[2].trim();
+            precio_total = precio_total.replaceAll("[[^a-zA-Z0-9\\s+]]", "");
+            precio_total = precio_total.substring(0,5);
+            int total = Integer.parseInt(precio_total);
+            System.out.println(total);
+        }
+
+        }
 
 
 

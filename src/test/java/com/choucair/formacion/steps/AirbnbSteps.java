@@ -12,7 +12,8 @@ public class AirbnbSteps {
     @Step
     public void entrar() throws AWTException {
         airbnbPage.open();
-        airbnbPage.excelente();
+//        airbnbPage.excelente();
+        airbnbPage.expresionR();
 //        airbnbPage.ubicarMapa();
 //        airbnbPage.moverMunequito();
 //        airbnbPage.zoomMapa();
