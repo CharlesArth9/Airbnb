@@ -8,20 +8,24 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.Locatable;
 import org.openqa.selenium.interactions.Mouse;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 
 @DefaultUrl("https://cutt.ly/metRPdQ")
 public class AirbnbPage extends PageObject {
 
+    private Object WebDriver;
+
     /* public void ubicarMapa() {
-         $("//button[@class='optanon-allow-all accept-cookies-button']").click();
-         *//*JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+             $("//button[@class='optanon-allow-all accept-cookies-button']").click();
+             *//*JavascriptExecutor jse = (JavascriptExecutor) getDriver();
         jse.executeScript("window.scrollBy(0, 463)");
         $("//button[contains(text(),'Ubicación')]").click();*//*
 
@@ -44,6 +48,7 @@ public class AirbnbPage extends PageObject {
 //        System.out.println(coor);
     }*/
     public void expresionR(){
+        getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         $("//button[@title='Aceptar']").waitUntilClickable().click();
         String  totalhabitacion= $("//div[@class=\"_8ssblpx\"]//descendant-or-self::span[starts-with(text(),'Total')]").getText();
         System.out.println(totalhabitacion);
@@ -66,7 +71,8 @@ public class AirbnbPage extends PageObject {
 
 
     public void excelente() throws AWTException {
-            Actions action = new Actions(getDriver());
+        WebDriverWait wait = new WebDriverWait(getDriver(),20);
+        Actions action = new Actions(getDriver());
             //Serenity.takeScreenshot();
             WebElement btnopinion = $("//div[@class='block_header block_title']//div//child::a");
             //action.moveToElement(jjpp);
