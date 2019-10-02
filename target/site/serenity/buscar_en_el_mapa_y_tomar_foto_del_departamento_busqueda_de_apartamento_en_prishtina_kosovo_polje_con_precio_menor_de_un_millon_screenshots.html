@@ -129,7 +129,7 @@
             <a href="requirement_type_feature.html"><i class="fa fa-comments-o"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 01-10-2019 11:32</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 02-10-2019 16:44</span>
     <br style="clear:left"/>
 </div>
 
@@ -170,9 +170,9 @@
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></span>
+                            <span class="outcome-icon"><i class='fa fa-times-circle failure-icon fa-2x' title='FAILURE'></i></span>
                             <span class="test-case-title">
-                                <span class="success-color">busqueda de apartamento en prishtina kosovo polje con precio menor de un millon
+                                <span class="failing-color">busqueda de apartamento en prishtina kosovo polje con precio menor de un millon
                                     <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -189,13 +189,49 @@
 
     <div id="beforetable"></div>
     <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Element should be enabled exception: Expected enabled element was not enabledBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'System info: host: 'CHMEPPF0HDQQD', ip: '172.17.27.86', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'Driver info: driver.version: unknown</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall""
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="far fa-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>com.choucair.formacion.pageobjects.AirbnbPage.pruebaCss(AirbnbPage.java:161)<br />com.choucair.formacion.steps.AirbnbSteps.entrar(AirbnbSteps.java:15)<br />com.choucair.formacion.definition.airbnbDefinitions.se_debe_realizar_una_busqueda_de_departamento(airbnbDefinitions.java:15)<br />✽.se debe realizar una busqueda de departamento(src/test/resources/features/Carlos.feature:5)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="panel-body">
+                    <a href="pagesource6293562090710560838.html.txt" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
         <div class="slider-wrapper theme-default">
             <div id="slider">
-                <img src="5a5b9e4c336a456b809444ee38fb803f7fea0eae1c94655d3cbd41e0b95847a8.png" title=" Given se debe realizar una busqueda de departamento" width="1366"/>
-                <img src="5a5b9e4c336a456b809444ee38fb803f7fea0eae1c94655d3cbd41e0b95847a8.png" title=" Entrar" width="1366"/>
-                <img src="5a5b9e4c336a456b809444ee38fb803f7fea0eae1c94655d3cbd41e0b95847a8.png" title=" Given se debe realizar una busqueda de departamento (completed)" width="1366"/>
-                <img src="5a5b9e4c336a456b809444ee38fb803f7fea0eae1c94655d3cbd41e0b95847a8.png" title=" When escojo las condiciones de departamento" width="1366"/>
-                <img src="5a5b9e4c336a456b809444ee38fb803f7fea0eae1c94655d3cbd41e0b95847a8.png" title=" Then busco en el mapa y hago el reporte: <span class='success-color'>SUCCESS</span>" width="1366"/>
+                <img src="c9c63af5b98ec033a11a714daed56efce157207101d7507f1cfda2f9b12693cd.png" title=" Given se debe realizar una busqueda de departamento" width="1366"/>
+                <img src="c9c63af5b98ec033a11a714daed56efce157207101d7507f1cfda2f9b12693cd.png" title=" Entrar: <span class='failing-color'>FAILURE</span>" width="1366"/>
             </div>
         </div>
 

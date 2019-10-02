@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 
-@DefaultUrl("https://cutt.ly/metRPdQ")
+@DefaultUrl("https://www.airbnb.com.co/s/Kosovo-Polje/homes?query=Kosovo%20Polje&checkin=2019-11-01&checkout=2019-11-06&adults=3&children=1&infants=0&guests=4&place_id=ChIJixZJfgdiUxMR8Ng101tANg4&refinement_paths%5B%5D=%2Ffor_you&toddlers=0&source=mc_search_bar&search_type=unknown")
 public class AirbnbPage extends PageObject {
 
     WebElement munequito = $("//div[@class='gm-svpc']");
@@ -149,6 +149,22 @@ public class AirbnbPage extends PageObject {
 
     // UBICACION NO ESTANDAR
         options.setBinary("/path/to/other/chrome/binary");
+
+
+    }
+
+
+    public void pruebaCss(){
+        {
+            WebDriverWait myWaitVar = new WebDriverWait(getDriver(), 3);
+            myWaitVar.until(ExpectedConditions.visibilityOfElementLocated(By.className("mailmunch-popover-iframe")));
+            getDriver().switchTo().frame(getDriver().findElement(By.className("mailmunch-popover-iframe")));
+            getDriver().findElement(By.xpath("//div[starts-with(@class,'theme')]//a")).click();
+            getDriver().switchTo().defaultContent();
+            $("//div[@id='js-cookie-notification']//button").click();
+            $("div .banner-background a[data-banner-id='Banner_Position_5']").waitUntilClickable().click();
+
+        }
 
 
     }

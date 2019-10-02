@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Buscar en el mapa y tomar foto del departamento" skipped="0" tests="1" time="21.09" timestamp="2019-10-01 11:32:18"><testcase name="busqueda de apartamento en prishtina kosovo polje con precio menor de un millon"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Buscar en el mapa y tomar foto del departamento" skipped="0" tests="1" time="25.36" timestamp="2019-10-02 04:44:22"><testcase name="busqueda de apartamento en prishtina kosovo polje con precio menor de un millon"><failure message="Expected enabled element was not enabled&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'CHMEPPF0HDQQD', ip: '172.17.27.86', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'&#10;Driver info: driver.version: unknown" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">Expected enabled element was not enabled
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'CHMEPPF0HDQQD', ip: '172.17.27.86', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: driver.version: unknown</failure><system-err>Expected enabled element was not enabled
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'CHMEPPF0HDQQD', ip: '172.17.27.86', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: driver.version: unknown&#13;
+com.choucair.formacion.pageobjects.AirbnbPage.pruebaCss(AirbnbPage.java:161)&#13;
+com.choucair.formacion.steps.AirbnbSteps.entrar(AirbnbSteps.java:15)&#13;
+com.choucair.formacion.definition.airbnbDefinitions.se_debe_realizar_una_busqueda_de_departamento(airbnbDefinitions.java:15)&#13;
+✽.se debe realizar una busqueda de departamento(src/test/resources/features/Carlos.feature:5)&#13;
+</system-err></testcase></testsuite>
