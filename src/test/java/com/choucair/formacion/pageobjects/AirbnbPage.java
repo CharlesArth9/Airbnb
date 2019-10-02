@@ -5,6 +5,8 @@ import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.*;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.Locatable;
 import org.openqa.selenium.interactions.Mouse;
@@ -16,6 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
@@ -126,6 +129,29 @@ public class AirbnbPage extends PageObject {
     }
 
 
+    // OPCIONES DE CHROME
+    public void opcionesChrome(){
+        ChromeOptions options = new ChromeOptions();
+        options.addExtensions(new File("/path/to/extension.crx"));
+        ChromeDriver driver = new ChromeDriver(options);
+
+    // USAR PROXY
+        Proxy proxy = new Proxy();
+        proxy.setHttpProxy("myhttpproxy:3337");
+        options.setCapability("proxy", proxy);
+
+    // USAR UN PERFIL DE CHROME ESPECIFICO
+        options.addArguments("user-data-dir=/path/to/your/custom/profile");
+
+    // CHROME INICIA MAXIMIZADO
+        options.addArguments("start-maximized");
+        options.addArguments("incognito");
+
+    // UBICACION NO ESTANDAR
+        options.setBinary("/path/to/other/chrome/binary");
+
+
+    }
 
 
 }
