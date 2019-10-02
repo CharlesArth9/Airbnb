@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 
-@DefaultUrl("https://www.airbnb.com.co/s/Kosovo-Polje/homes?query=Kosovo%20Polje&checkin=2019-11-01&checkout=2019-11-06&adults=3&children=1&infants=0&guests=4&place_id=ChIJixZJfgdiUxMR8Ng101tANg4&refinement_paths%5B%5D=%2Ffor_you&toddlers=0&source=mc_search_bar&search_type=unknown")
+@DefaultUrl("https://pacifika.com")
 public class AirbnbPage extends PageObject {
 
     WebElement munequito = $("//div[@class='gm-svpc']");
