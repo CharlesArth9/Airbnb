@@ -116,7 +116,7 @@ public class AirbnbPage extends PageObject {
 
     }
 
-    // METODO DE ESPERA DE CUALQUIER ELEMENTO
+    // METODO DE ESPERA DE CUALQUIER ELEMENTO ------> EXPLICITO
     public WebElement capturarVisible(By munequito)
     {
         WebElement element = null;
