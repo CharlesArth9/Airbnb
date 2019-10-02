@@ -8,6 +8,9 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.Locatable;
 import org.openqa.selenium.interactions.Mouse;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
@@ -21,7 +24,7 @@ import java.util.regex.Pattern;
 @DefaultUrl("https://cutt.ly/metRPdQ")
 public class AirbnbPage extends PageObject {
 
-    private Object WebDriver;
+    WebElement munequito = $("//div[@class='gm-svpc']");
 
     /* public void ubicarMapa() {
              $("//button[@class='optanon-allow-all accept-cookies-button']").click();
@@ -71,6 +74,7 @@ public class AirbnbPage extends PageObject {
 
 
     public void excelente() throws AWTException {
+
         WebDriverWait wait = new WebDriverWait(getDriver(),20); // TIEMPO EXPLICITO
         Actions action = new Actions(getDriver());
             //Serenity.takeScreenshot();
@@ -110,6 +114,18 @@ public class AirbnbPage extends PageObject {
         WebElement calificador = $("//span[@id='bubble_rating']");
         new Actions(getDriver()).dragAndDropBy(algo,310,351).build().perform();*/
 
-
     }
+
+    // METODO DE ESPERA DE CUALQUIER ELEMENTO
+    public WebElement capturarVisible(By munequito)
+    {
+        WebElement element = null;
+        WebDriverWait waite = new WebDriverWait(getDriver(), 10);
+        element = waite.until(ExpectedConditions.visibilityOfElementLocated(munequito));
+        return element;
+    }
+
+
+
+
 }
