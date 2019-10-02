@@ -48,7 +48,7 @@ public class AirbnbPage extends PageObject {
 //        System.out.println(coor);
     }*/
     public void expresionR(){
-        getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);   //TIEMPO IMPLICITO
         $("//button[@title='Aceptar']").waitUntilClickable().click();
         String  totalhabitacion= $("//div[@class=\"_8ssblpx\"]//descendant-or-self::span[starts-with(text(),'Total')]").getText();
         System.out.println(totalhabitacion);
@@ -71,7 +71,7 @@ public class AirbnbPage extends PageObject {
 
 
     public void excelente() throws AWTException {
-        WebDriverWait wait = new WebDriverWait(getDriver(),20);
+        WebDriverWait wait = new WebDriverWait(getDriver(),20); // TIEMPO EXPLICITO
         Actions action = new Actions(getDriver());
             //Serenity.takeScreenshot();
             WebElement btnopinion = $("//div[@class='block_header block_title']//div//child::a");
