@@ -2,6 +2,7 @@ package com.choucair.formacion.pageobjects;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
+import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.*;
 import org.openqa.selenium.Point;
@@ -24,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 
-@DefaultUrl("https://pacifika.com")
+@DefaultUrl("https://google.com.co")
 public class AirbnbPage extends PageObject {
 
     WebElement munequito = $("//div[@class='gm-svpc']");
@@ -168,6 +169,21 @@ public class AirbnbPage extends PageObject {
 
 
     }
+    public void googleTraductor() throws AWTException {
+        $("//a[@class='gb_B gb_sc']").waitUntilClickable().click();
+       // waitFor(3).seconds();
+        WebDriverWait wait = new WebDriverWait(getDriver(),5); // TIEMPO EXPLICITO
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@id='gb']//div[@aria-label='Google apps']/ul//li[10])[1]/a"))).click();
+        // waitForTextToAppear("Traductor");
+       // $("a#gb51").waitUntilClickable().click();
+        /*Robot robot = new Robot();
 
+        for (int i=1; i<=9; i++) {
+            robot.keyPress(KeyEvent.VK_TAB);
+        }
+        robot.keyPress(KeyEvent.VK_ENTER);
+*/
+
+    }
 
 }
