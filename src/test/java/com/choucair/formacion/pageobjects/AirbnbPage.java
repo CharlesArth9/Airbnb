@@ -54,45 +54,41 @@ public class AirbnbPage extends PageObject {
 //        Point coor = getDriver().findElement(By.xpath("//body[@class='with-new-header']/div/div/main[@id='site-content']/div/section/div[@id='room']/div[@class='_mwt4r90']/div/div[@class='_1k6i3d4']/div[@class='_mkyacvg']/div/div[@id='neighborhood']/div[@class='_1gw6tte']/div/div/div/div[@class='_e296pg']/section/div/div/div/div/div/div/div[@class='gm-style']/div/div[3]")).getLocation();
 //        System.out.println(coor);
     }*/
-    public void expresionR(){
+    public void expresionR() {
         getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);   //TIEMPO IMPLICITO
         $("//button[@title='Aceptar']").waitUntilClickable().click();
-        String  totalhabitacion= $("//div[@class=\"_8ssblpx\"]//descendant-or-self::span[starts-with(text(),'Total')]").getText();
+        String totalhabitacion = $("//div[@class=\"_8ssblpx\"]//descendant-or-self::span[starts-with(text(),'Total')]").getText();
         System.out.println(totalhabitacion);
         String[] totalseparado = totalhabitacion.split("\n");
 
 
-        if (Pattern.matches("[$][0-9]+[,][0-9]+\\s[A-Z]+", totalseparado[2].trim()))
-        {
+        if (Pattern.matches("[$][0-9]+[,][0-9]+\\s[A-Z]+", totalseparado[2].trim())) {
             String precio_total = totalseparado[2].trim();
             precio_total = precio_total.replaceAll("[[^a-zA-Z0-9\\s+]]", "");
-            precio_total = precio_total.substring(0,5);
+            precio_total = precio_total.substring(0, 5);
             int total = Integer.valueOf(precio_total);
             System.out.println(total);
         }
 
-        }
-
-
-
+    }
 
 
     public void excelente() throws AWTException {
 
-        WebDriverWait wait = new WebDriverWait(getDriver(),20); // TIEMPO EXPLICITO
+        WebDriverWait wait = new WebDriverWait(getDriver(), 20); // TIEMPO EXPLICITO
         Actions action = new Actions(getDriver());
-            //Serenity.takeScreenshot();
-            WebElement btnopinion = $("//div[@class='block_header block_title']//div//child::a");
-            //action.moveToElement(jjpp);
-            //action.contextClick(jjpp).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.RETURN).build().perform();
-            //action.contextClick(jjpp).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
-            action.contextClick(btnopinion).build().perform();
-            Robot robot = new Robot();
-            robot.keyPress(KeyEvent.VK_DOWN);
-            robot.keyPress(KeyEvent.VK_ENTER);
-            ArrayList<String> pest = new ArrayList<>(getDriver().getWindowHandles());
-            getDriver().switchTo().window(pest.get(1));
-            waitForTextToAppear("Haz clic para calificar");
+        //Serenity.takeScreenshot();
+        WebElement btnopinion = $("//div[@class='block_header block_title']//div//child::a");
+        //action.moveToElement(jjpp);
+        //action.contextClick(jjpp).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.RETURN).build().perform();
+        //action.contextClick(jjpp).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+        action.contextClick(btnopinion).build().perform();
+        Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        ArrayList<String> pest = new ArrayList<>(getDriver().getWindowHandles());
+        getDriver().switchTo().window(pest.get(1));
+        waitForTextToAppear("Haz clic para calificar");
 
 // SIN QUEMAR DATOS FUNCIONA
         /*int y = getDriver().findElement(By.xpath("//span[@id='bubble_rating']")).getLocation().getY();
@@ -101,7 +97,7 @@ public class AirbnbPage extends PageObject {
         new Actions(getDriver()).moveByOffset(x+145,y+32).click().build().perform();*/
 
         Point coor = getDriver().findElement(By.xpath("//span[@id='bubble_rating']")).getLocation();
-        new Actions(getDriver()).moveByOffset(coor.x+145,coor.y+32).click().build().perform();
+        new Actions(getDriver()).moveByOffset(coor.x + 145, coor.y + 32).click().build().perform();
    /*     new Actions(getDriver()).moveByOffset(coor.x,coor.y).perform();
         coor.moveBy(342,351);
         new Actions(getDriver()).click().build().perform();
@@ -121,8 +117,7 @@ public class AirbnbPage extends PageObject {
     }
 
     // METODO DE ESPERA DE CUALQUIER ELEMENTO ------> EXPLICITO
-    public WebElement capturarVisible(By munequito)
-    {
+    public WebElement capturarVisible(By munequito) {
         WebElement element = null;
         WebDriverWait waite = new WebDriverWait(getDriver(), 10);
         element = waite.until(ExpectedConditions.visibilityOfElementLocated(munequito));
@@ -131,31 +126,32 @@ public class AirbnbPage extends PageObject {
 
 
     // OPCIONES DE CHROME
-    public void opcionesChrome(){
+    public void opcionesChrome() {
         ChromeOptions options = new ChromeOptions();
         options.addExtensions(new File("/path/to/extension.crx"));
         ChromeDriver driver = new ChromeDriver(options);
 
-    // USAR PROXY
+        // USAR PROXY
         Proxy proxy = new Proxy();
         proxy.setHttpProxy("myhttpproxy:3337");
         options.setCapability("proxy", proxy);
 
-    // USAR UN PERFIL DE CHROME ESPECIFICO
+        // USAR UN PERFIL DE CHROME ESPECIFICO
         options.addArguments("user-data-dir=/path/to/your/custom/profile");
 
-    // CHROME INICIA MAXIMIZADO
+        // CHROME INICIA MAXIMIZADO
         options.addArguments("start-maximized");
+        // CHROME INICIA EN INCOGNITO
         options.addArguments("incognito");
 
-    // UBICACION NO ESTANDAR
+        // UBICACION NO ESTANDAR
         options.setBinary("/path/to/other/chrome/binary");
 
 
     }
 
 
-    public void pruebaCss(){
+    public void pruebaCss() {
         {
             WebDriverWait myWaitVar = new WebDriverWait(getDriver(), 3);
             myWaitVar.until(ExpectedConditions.visibilityOfElementLocated(By.className("mailmunch-popover-iframe")));
@@ -169,13 +165,14 @@ public class AirbnbPage extends PageObject {
 
 
     }
+
     public void googleTraductor() throws AWTException {
         $("//a[@class='gb_B gb_sc']").waitUntilClickable().click();
-       // waitFor(3).seconds();
-        WebDriverWait wait = new WebDriverWait(getDriver(),5); // TIEMPO EXPLICITO
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@id='gb']//div[@aria-label='Google apps']/ul//li[10])[1]/a"))).click();
+        // waitFor(3).seconds();
+        WebDriverWait wait = new WebDriverWait(getDriver(), 5); // TIEMPO EXPLICITO
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@id='gb']//div[@aria-label='Google apps']/ul//li[11])[1]/a"))).click();
         // waitForTextToAppear("Traductor");
-       // $("a#gb51").waitUntilClickable().click();
+        // $("a#gb51").waitUntilClickable().click();
         /*Robot robot = new Robot();
 
         for (int i=1; i<=9; i++) {
